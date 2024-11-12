@@ -11,18 +11,20 @@ const Users = () => {
 
 	const handleInputChange = (value: string) => {
 		setInput(value);
-		// console.log(value);
 	}
 
 	const handleClick = () => {
-		console.log(getinput);
 		setUsers((prevUsers) => [...prevUsers, getinput]);
 		setInput('');
 	}
 
-	// useEffect(() => {
-	// 	console.log('Users updated:', users);
-	//   }, [users]);
+	const handleRmoveUser = (index: number) => {
+		setUsers((prevUsers) => prevUsers.filter((_, i) => i !== index));
+	}
+
+	useEffect(() => {
+		console.log('Users updated:', users);
+	  }, [users]);
 
   return (
 	<>
@@ -32,7 +34,7 @@ const Users = () => {
 	</div>
 
 	<div className='mt-12 flex flex-col gap-2'>
-		<List users={users}></List>
+		<List users={users} removeUser={handleRmoveUser}></List>
 	</div>
 	</>
   )
