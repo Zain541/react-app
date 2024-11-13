@@ -2,6 +2,7 @@ import { useState } from "react";
 import Button from "./components/Button";
 import Users from "./components/users/Users";
 import ListGroup from "./components/ListGroup";
+import Icons from "./components/Icons";
   
   function App(){
     const [showContainer, setShowContainer] = useState(false);
@@ -12,10 +13,12 @@ import ListGroup from "./components/ListGroup";
               {showContainer && <div className="p-4 bg-green-200 text-green-800 border">Success!</div>}
               <div><span><Button onClick={() => setShowContainer(!showContainer)} buttonText="Click"></Button></span></div>
           </div>
-          <div className="mt-8 p-2">
+          <div className="mt-8 p-6 flex flex-col gap-4">
             <Users></Users>
 
             <ListGroup></ListGroup>
+
+            <Icons></Icons>
           </div>
         </div>
       </div>
