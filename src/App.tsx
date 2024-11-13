@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "./components/Button";
 import Users from "./components/users/Users";
+import ListGroup from "./components/ListGroup";
   
   function App(){
     const [showContainer, setShowContainer] = useState(false);
@@ -13,6 +14,8 @@ import Users from "./components/users/Users";
           </div>
           <div className="mt-8 p-2">
             <Users></Users>
+
+            <ListGroup></ListGroup>
           </div>
         </div>
       </div>
