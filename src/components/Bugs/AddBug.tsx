@@ -17,11 +17,11 @@ export const AddBug = ({totalBugs, onBugcreation}: Bugs) => {
 
 	const handleClick = () => {
 		onBugcreation({ id: totalBugs + 1, title: newTitle, status: 'In Progress' });
-		// onBugcreation(bug);
+		setTitle('');
 	}
   return (
 	<div className='flex flex-col gap-2'>
-		<Input onInputChange={handleTitle}></Input>
+		<Input onInputChange={handleTitle} value={newTitle}></Input>
 		<span>
 			<Button onClick={handleClick} buttonText='Add New Bug'></Button>
 		</span>

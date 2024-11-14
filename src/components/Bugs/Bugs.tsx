@@ -11,12 +11,10 @@ interface Bug {
 export const Bugs = () => {
 	const [bugs, setBugs] = useState<Bug[]>([]);
 
-	const handleRemove = () => {
-		console.log('remove');
-	};
-
-	const handleComplete = () => {
-		console.log('complete');
+	const handleComplete = (index: number) => {
+		setBugs(bugs.map(bug => 
+			bug.id === index ? { ...bug, status: 'completed' } : bug
+		));
 	};
 
 	const handleBugCreation = (newBug: Bug) => {
@@ -47,8 +45,7 @@ export const Bugs = () => {
 									<td className="px-6 py-4">{bug.title}</td>
 									<td className="px-6 py-4">{bug.status}</td>
 									<td className="px-6 py-4 flex gap-2">
-										<Button onClick={handleRemove} buttonText="Remove" classes="bg-red-400 p-2 text-white cursor-pointer" />
-										<Button onClick={handleComplete} buttonText="Complete" classes="bg-blue-400 p-2 text-white cursor-pointer" />
+										<Button onClick={() => handleComplete(bug.id)} buttonText="Complete" classes="bg-blue-400 p-2 text-white cursor-pointer" />
 									</td>
 								</tr>
 							))
@@ -62,7 +59,7 @@ export const Bugs = () => {
 			</div>
 
 			<div>
-				<AddBug onBugcreation={handleBugCreation} totalBugs={bugs.length} />
+				<AddBug onBugcreation={handleBugCreation} totalBugs={ bugs.length} />
 			</div>
 		</div>
 	);
