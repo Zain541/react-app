@@ -5,6 +5,8 @@ import ListGroup from "./components/ListGroup";
 import Icons from "./components/Icons";
 import Drinks from "./components/Drinks";
 import Bugs from "./components/Bugs";
+import { ReactForm } from "./components/react-form-hook/ReactForm";
+import { ReactFormZod } from "./components/react-form-hook/ReactFormZod";
   
   function App(){
     const [showContainer, setShowContainer] = useState(false);
@@ -24,8 +26,11 @@ import Bugs from "./components/Bugs";
 
             <Drinks></Drinks>
 
-
             <Bugs></Bugs>
+
+            <ReactForm></ReactForm>
+
+            <ReactFormZod></ReactFormZod>
           </div>
         </div>
       </div>
