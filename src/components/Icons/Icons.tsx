@@ -14,7 +14,7 @@ export const Icons = () => {
 
 	if(status === true)
 		return (
-					<FaHeart size="40" className='cursor-pointer text-red-500' onClick={handleClick} />	
+			<FaHeart size="40" className='cursor-pointer text-red-500' onClick={handleClick} />	
 		);
 
 	return (

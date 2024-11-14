@@ -6,7 +6,7 @@ interface Props{
 	onInputChange: (value: string) => void;
 }
 
-const Input = ({placeholder = 'Enter Value', onInputChange, value = 'bg-pink-400 p-2 text-white cursor-pointer'}: Props) => {
+const Input = ({placeholder = 'Enter Value', onInputChange, value}: Props) => {
 	const handleKeyUp = (event: React.ChangeEvent<HTMLInputElement>) => {
 		onInputChange(event.target.value);
 	}

@@ -3,6 +3,8 @@ import Button from "./components/Button";
 import Users from "./components/users/Users";
 import ListGroup from "./components/ListGroup";
 import Icons from "./components/Icons";
+import Drinks from "./components/Drinks";
+import Bugs from "./components/Bugs";
   
   function App(){
     const [showContainer, setShowContainer] = useState(false);
@@ -19,6 +21,11 @@ import Icons from "./components/Icons";
             <ListGroup></ListGroup>
 
             <Icons></Icons>
+
+            <Drinks></Drinks>
+
+
+            <Bugs></Bugs>
           </div>
         </div>
       </div>
