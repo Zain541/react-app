@@ -22,9 +22,9 @@ const Users = () => {
 		setUsers((prevUsers) => prevUsers.filter((_, i) => i !== index));
 	}
 
-	useEffect(() => {
-		console.log('Users updated:', users);
-	  }, [users]);
+	// useEffect(() => {
+	// 	// console.log('Users updated:', users);
+	//   }, [users]);
 
   return (
 	<>
