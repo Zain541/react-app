@@ -7,33 +7,41 @@ import Drinks from "./components/Drinks";
 import Bugs from "./components/Bugs";
 import { ReactForm } from "./components/react-form-hook/ReactForm";
 import { ReactFormZod } from "./components/react-form-hook/ReactFormZod";
+import Expenses from "./components/react-form-hook/expense-tracker/Expenses";
   
   function App(){
     const [showContainer, setShowContainer] = useState(false);
     return (
-      <div className="flex">
-        <div className="w-1/2 justify-center align-center">
-          <div className="flex flex-col p-2 mt-12 gap-2">
-              {showContainer && <div className="p-4 bg-green-200 text-green-800 border">Success!</div>}
-              <div><span><Button onClick={() => setShowContainer(!showContainer)} buttonText="Click"></Button></span></div>
-          </div>
-          <div className="mt-8 p-6 flex flex-col gap-4">
-            <Users></Users>
+      <>
+        <div className="flex justify-center">
+          <div className="w-1/2 justify-center align-center">
+            <div className="flex flex-col p-2 mt-12 gap-2">
+                {showContainer && <div className="p-4 bg-green-200 text-green-800 border">Success!</div>}
+                <div><span><Button onClick={() => setShowContainer(!showContainer)} buttonText="Click"></Button></span></div>
+            </div>
+            <div className="mt-8 p-6 flex flex-col gap-4">
+              <Users></Users>
 
-            <ListGroup></ListGroup>
+              <ListGroup></ListGroup>
 
-            <Icons></Icons>
+              <Icons></Icons>
 
-            <Drinks></Drinks>
+              <Drinks></Drinks>
 
-            <Bugs></Bugs>
+              <Bugs></Bugs>
 
-            <ReactForm></ReactForm>
+              <ReactForm></ReactForm>
 
-            <ReactFormZod></ReactFormZod>
+              <ReactFormZod></ReactFormZod>
+
+            </div>
           </div>
         </div>
-      </div>
+
+        <div className="flex justify-center mt-6  py-12">
+            <Expenses></Expenses>
+        </div>
+      </>
     );
 }
 
