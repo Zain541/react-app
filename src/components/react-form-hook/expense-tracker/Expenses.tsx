@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Table from './Table'
 import Select from './Select';
 
@@ -16,11 +16,20 @@ interface Expenses{
 const Expenses = () => {
   const [expenses, setExpenses] = useState<Expense[]>([
     { description: 'Electricity Bills', amount: 10, category: 'Utility' },
+    { description: 'Groceries', amount: 10, category: 'Grocery' },
   ]);
 
   const handleCategoryChange = (category: string) => {
-    console.log(category, ' is being changesd');
+
+    console.log(category);
+    setExpenses(expenses.filter((expense) => expense.category == category));
+
+    
   }
+
+  useEffect(() => {
+    console.log(expenses);
+	  }, [expenses]);
 
 
   return (
