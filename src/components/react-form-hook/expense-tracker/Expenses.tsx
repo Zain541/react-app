@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Table from './Table'
-import { categories } from '../../categories'
+import Select from './Select';
 
 interface Expense{
   description: string;
@@ -18,6 +18,10 @@ const Expenses = () => {
     { description: 'Electricity Bills', amount: 10, category: 'Utility' },
   ]);
 
+  const handleCategoryChange = (category: string) => {
+    console.log(category, ' is being changesd');
+  }
+
 
   return (
 	<div className='w-3/4  border rounded-xl p-6 flex flex-col'>
@@ -28,14 +32,7 @@ const Expenses = () => {
               Daily Expenses
             </h1>
 
-            <div className='w-[50%]'>
-              <select className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'>
-                <option value="">All Categories</option>
-                {
-                  categories.map((category) => <option value={category} key={category}>{category}</option>)
-                }
-              </select>
-            </div>
+            <Select onCategoryChange={handleCategoryChange}></Select>
 
         </div>
     </div>
