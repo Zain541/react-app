@@ -1,8 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Table from './Table'
 import { categories } from '../../categories'
 
+interface Expense{
+  description: string;
+  amount: number;
+  category: string;
+
+}
+
+interface Expenses{
+  expenses: Expense[];
+}
+
 const Expenses = () => {
+  const [expenses, setExpenses] = useState<Expense[]>([
+    { description: 'Electricity Bills', amount: 10, category: 'Utility' },
+  ]);
+
+
   return (
 	<div className='w-3/4  border rounded-xl p-6 flex flex-col'>
     <div className='flex flex-row-reverse'>
@@ -25,7 +41,7 @@ const Expenses = () => {
     </div>
       
 
-    <Table></Table>
+    <Table expenses={expenses}></Table>
 
   </div>
   )
